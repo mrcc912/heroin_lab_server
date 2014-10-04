@@ -1,0 +1,22 @@
+{
+  "name": "heroin_lab_server",
+  "version": "0.0.0",
+  "description": "A server to help the shared data for my heroin_lab project",
+  "main": "index.js",
+  "scripts": {
+    "app": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mrcc912/heroin_lab_server.git"
+  },
+  "author": "Michael Christensen-Calvin <mrcc912@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrcc912/heroin_lab_server/issues"
+  },
+  "homepage": "https://github.com/mrcc912/heroin_lab_server",
+	"depenencies": "",
+	
+	
+}
