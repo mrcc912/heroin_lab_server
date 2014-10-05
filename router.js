@@ -1,12 +1,12 @@
 var routes = {};
 
-function route(pathname, request, response, postData)
+function route(pathname, response, url, postData)
 {
   console.log("routing " + pathname);
   if ( typeof routes[pathname] === 'function')
   {
     console.log("routing request for " + pathname);
-    routes[pathname](request, response, postData);
+    routes[pathname](url, response, postData);
   }
   else
   {

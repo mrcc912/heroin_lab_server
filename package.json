@@ -16,7 +16,7 @@
     "url": "https://github.com/mrcc912/heroin_lab_server/issues"
   },
   "homepage": "https://github.com/mrcc912/heroin_lab_server",
-	"depenencies": "",
-	
-	
+  "dependencies": {
+    "mongoose": "^3.8.17"
+  }
 }

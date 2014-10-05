@@ -1,7 +1,7 @@
 var http = require('http');
 var url = require('url');
 var handler = require("./handler.js");
-var mongo = require("mongo");
+var mongo = require("./mongo");
 var querystring = require('querystring');
 
 
@@ -11,7 +11,9 @@ function start(route)
 {
   function handleRequest(request, response)
   {
-    var pathname = url.parse(request.url).pathname;
+    var parsedURL = url.parse(request.url);
+    var pathname = parsedURL.pathname;
+
     console.log("recieved request for pathname: " + pathname);
 
     var fullPostData = "";
@@ -23,7 +25,7 @@ function start(route)
 
     request.addListener("end", function(data){
       fullPostData += data;
-      route(pathname, request, response, fullPostData);
+      route(pathname, response, parsedURL, fullPostData);
     });
 
   }
