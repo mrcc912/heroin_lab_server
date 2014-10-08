@@ -16,20 +16,20 @@ for item in soup.find_all("item"):
     items.append(item)
 
 for item in items:
-#for i in range(0, 1):
-#    item = items[i]
     itemObject = {}
     for index in easy_grabs:
         if item.find(index) != None:
             itemObject[index] = item.find(index).text.encode("utf-8")
     if item.find("prereq") != None:
         reqs = []
-        arr = item.find("prereq").split(",")
+        arr = item.find("prereq").text.encode("utf-8").split(",")
         for val in arr:
             optionSet = []
-                for option in arr.split("or"):
-                    option.strip()
-                    optionSet.append(option)
+            if val.find(" or ") != None:
+                for option in val.split(" or "):
+                    optionSet.append(option.strip())
+            else:
+                optionSet.append(val.strip())
             reqs.append(optionSet)
         itemObject["prereq"] = reqs
 
